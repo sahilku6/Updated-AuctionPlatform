@@ -19,6 +19,7 @@ export const placeBid = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler("Bid amount must be greater than the current bid.", 404)
     );
   }
+  
   if (amount < auctionItem.startingBid) {
     return next(
       new ErrorHandler("Bid amount must be greater than starting bid.", 404)
@@ -68,4 +69,4 @@ export const placeBid = catchAsyncErrors(async (req, res, next) => {
   } catch (error) {
     return next(new ErrorHandler(error.message || "Failed to place bid.", 500));
   }
-})
+});
