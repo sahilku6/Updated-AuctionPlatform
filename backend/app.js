@@ -24,6 +24,7 @@ app.use(
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
+  
 );
 
 app.use(cookieParser());
